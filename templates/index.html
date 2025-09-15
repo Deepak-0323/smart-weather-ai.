@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainfall Predictor</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ✅ Correct way to load static CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="card">
+        <h1>🌧️ Rainfall Predictor</h1>
+        <p>Enter a city to get a rain prediction.</p>
+        
+        <!-- Search input -->
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="e.g., Hyderabad, Mumbai, Delhi">
+            <button id="predict-btn">Predict</button>
+        </div>
+
+        <!-- Weather info -->
+        <div class="weather-display">
+            <h2 id="city-name"></h2>
+            <div class="weather-metrics">
+                <div class="metric">
+                    <span>🌡️ Temp:</span>
+                    <span id="temp" class="value"></span>
+                </div>
+                <div class="metric">
+                    <span>💧 Humidity:</span>
+                    <span id="humidity" class="value"></span>
+                </div>
+                <div class="metric">
+                    <span>🌬️ Pressure:</span>
+                    <span id="pressure" class="value"></span>
+                </div>
+            </div>
+            
+            <div class="prediction-result">
+                <h3>Prediction</h3>
+                <p id="prediction-text" class="prediction-text"></p>
+            </div>
+        </div>
+        
+        <!-- Error messages -->
+        <div class="error-message">
+            <p id="error-text"></p>
+        </div>
+    </div>
+
+    <!-- ✅ Load JS file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
